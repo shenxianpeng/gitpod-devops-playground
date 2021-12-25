@@ -17,5 +17,3 @@ RUN apt-get update \
     docker-ce \
     docker-ce-cli \
     containerd.io
-
-RUN chmod 666 /var/run/docker.sock

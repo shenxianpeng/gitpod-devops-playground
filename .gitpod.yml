@@ -1,1 +1,2 @@
-image: ubuntu:18.04
+image: 
+  file: .Dockerfile

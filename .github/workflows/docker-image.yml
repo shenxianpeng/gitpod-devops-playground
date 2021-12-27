@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest    
 
     steps:
     - uses: actions/checkout@v2
@@ -22,7 +22,9 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
       
     - name: Scan Docker image
-      run: docker scan xianpengshen/play-with-docker:latest
+      run: | 
+        apt-get update && apt-get install docker-scan-plugin
+        docker scan xianpengshen/play-with-docker:latest
       
     - name: Push Docker image
       run: docker push xianpengshen/play-with-docker:latest

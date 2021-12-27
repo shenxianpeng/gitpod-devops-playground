@@ -1,0 +1,27 @@
+name: Docker Image CI
+
+on:
+  push:
+    paths:
+      - 'Dockerfile'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Docker image
+      run: docker build . --file Dockerfile --tag xianpengshen/play-with-docker:latest
+    
+    - name: Login Docker hub
+      run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      
+    - name: Scan Docker image
+      run: docker scan xianpengshen/play-with-docker:latest
+      
+    - name: Push Docker image
+      run: docker push xianpengshen/play-with-docker:latest
+      
+    - name: Logout Docker hub
+      run: docker logout

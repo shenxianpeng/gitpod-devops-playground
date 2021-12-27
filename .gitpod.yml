@@ -1,1 +1,1 @@
-image: docker
+image: docker:20.10.12

@@ -4,4 +4,4 @@
 
 A simple, interactive playground to learn Docker with [Gitpod](https://www.gitpod.io/)
 
-Play with Docker(PWD) is a Docker playground that allows you to run Docker commands in a matter of seconds. It gives the experience of having a free Ubuntu-based in browser, where you can build and run Docker containers.
+Play with Docker(PWD) is a Docker playground that allows you to run Docker commands in a matter of seconds. It gives the experience of having a free Ubuntu-based environment in browser, where you can build and run Docker containers.
